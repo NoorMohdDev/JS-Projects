@@ -1,0 +1,9 @@
+*
+{
+    box-sizing: border-box;
+    transition: .6s;
+}
+.card{
+    min-width: 200px !important;
+    box-shadow: 10px 10px 23px -4px rgba(34,85,85,0.75);
+}
