@@ -11,6 +11,9 @@ let green = 0;
 let red = 0;
 let blue = 0;
 
+const copyColorToClipBoard = document.querySelectorAll(".rgb-copy-color, .hex-copy-color");
+
+
 hexBtn.addEventListener("click", () => {
   const str = "abcdef0123456789";
   let newHexValue = "";
@@ -31,12 +34,12 @@ rgbBtn.addEventListener("click", () => {
 
   document.querySelectorAll("input").forEach((element) => {
     if (element.id === "red") {
-        element.value = red;
-      } else if (element.id === "blue") {
-        element.value = blue;
-      } else {
-        element.value = green;
-      }
+      element.value = red;
+    } else if (element.id === "blue") {
+      element.value = blue;
+    } else {
+      element.value = green;
+    }
   });
 
   rgbColorValue.innerHTML = `rgb(${red},${green},${blue})`;
@@ -57,3 +60,18 @@ document.querySelectorAll("input").forEach((element) => {
     rgbColorContainer.style.backgroundColor = rgbColorValue.innerHTML;
   });
 });
+
+copyColorToClipBoard.forEach(element => {
+    element.addEventListener("click", (e) => {
+
+          navigator.clipboard.writeText(e.target.classList.value === "hex-copy-color"? hexColorValue.innerHTML : rgbColorValue.innerHTML).then(() => {
+            element.innerHTML = "Copied";
+            console.log(e.target.classList.value);
+            
+          })
+          setTimeout(() => {
+            element.innerHTML = "Copy To Clipboard";
+          }, 1000);
+          
+      }
+)})
