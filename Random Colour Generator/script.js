@@ -66,7 +66,6 @@ copyColorToClipBoard.forEach(element => {
 
           navigator.clipboard.writeText(e.target.classList.value === "hex-copy-color"? hexColorValue.innerHTML : rgbColorValue.innerHTML).then(() => {
             element.innerHTML = "Copied";
-            console.log(e.target.classList.value);
             
           })
           setTimeout(() => {
