@@ -19,7 +19,7 @@ hexBtn.addEventListener("click", () => {
   let newHexValue = "";
 
   for (let i = 1; i <= 6; i++) {
-    newHexValue += str[Math.floor(Math.random() * 16)];
+    newHexValue += str[Math.floor(Math.random() * str.length)];
   }
 
   hexColorValue.innerHTML = `#${newHexValue}`;
@@ -28,16 +28,16 @@ hexBtn.addEventListener("click", () => {
 });
 
 rgbBtn.addEventListener("click", () => {
-  red = Math.floor(Math.random() * 255);
-  gren = Math.floor(Math.random() * 255);
-  blue = Math.floor(Math.random() * 255);
 
   document.querySelectorAll("input").forEach((element) => {
     if (element.id === "red") {
+      red = Math.floor(Math.random() * element.max);
       element.value = red;
     } else if (element.id === "blue") {
+      blue = Math.floor(Math.random() * element.max);
       element.value = blue;
     } else {
+      green = Math.floor(Math.random() * element.max);
       element.value = green;
     }
   });
