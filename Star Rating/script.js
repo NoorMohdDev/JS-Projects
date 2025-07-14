@@ -1,46 +1,40 @@
-const container = document.querySelector(".container");
-const starRatingContainer = document.querySelector(".star-rating-container");
-const starRatingValue = document.querySelector(".selected-rating-value");
-const starIcons = document.querySelectorAll(".fa");
+const stars = document.querySelectorAll(".fa-regular");
+const selectedRatingValueText = document.querySelector(
+  ".selected-rating-value"
+);
 
-starIcons.forEach((item) => {
-  item.addEventListener("mouseover", (e) => {
+let currentTotalSelectedStars = -1;
 
-    item.classList.add("active");
-    for (let i = 0; i < starIcons.length; i++) {
-      if (starIcons[i].classList.contains("active")) {
-        return;
-      } else {
-        starIcons[i].classList.add("active");
-      }
-    }
-  });
-
-  item.addEventListener("mouseout", (e) => {
-
-    item.classList.remove("active");
-    for (let i = 0; i < starIcons.length; i++) {
-      if (!starIcons[i].classList.contains("active")) {
-        return;
-      } else {
-        starIcons[i].classList.remove("active");
-      }
-    }
-  });
-
-  item.addEventListener("click", (e) => {
-
-    starRatingValue.innerText = 1;
-    for (let i = 0; i < starIcons.length; i++) {
-      if (starIcons[i].classList.contains("active")) {
-        starRatingValue.innerText = 1
-        console.log(i);
-        
-        return;
-      } else {
-        starIcons[i].classList.add("active");
-      }
-    }
-  });
-  
+stars.forEach((starItem, index) => {
+  starItem.dataset.rating = index + 1;
+  starItem.addEventListener("mouseover", handleMouseOver);
+  starItem.addEventListener("click", handleOnClick);
+  starItem.addEventListener("mouseleave", handleMouseLeave);
 });
+
+function handleMouseOver(event) {
+  const currentRatingValue = event.target.dataset.rating;
+  if (!currentRatingValue) return;
+  else handleUpdateRatingState(currentRatingValue);
+}
+
+function handleUpdateRatingState(getCurrentRatingValue) {
+  for (let i = 0; i < 5; i++) {
+    if (i < getCurrentRatingValue) {
+      stars[i].classList.replace("fa-regular", "fa-solid");
+    } else {
+      stars[i].classList.replace("fa-solid", "fa-regular");
+    }
+  }
+}
+
+function handleOnClick(event){
+    const currentRatingValue = event.target.dataset.rating;
+    currentTotalSelectedStars = currentRatingValue;
+    handleUpdateRatingState(currentTotalSelectedStars)
+    selectedRatingValueText.textContent = currentTotalSelectedStars
+}
+
+function handleMouseLeave(){
+  handleUpdateRatingState(currentTotalSelectedStars)
+}
