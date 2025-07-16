@@ -1,11 +1,11 @@
 const slider = document.querySelector(".slider");
-let page = 1;
-let limit = 10;
 const apiURL = `https://picsum.photos/v2/list?page=${page}&limit=${limit}`;
 const dotsContainer = document.querySelector(".dots-container");
 const dots = document.querySelector(".dots");
 const prev = document.querySelector(".prev");
 const next = document.querySelector(".next");
+let page = 1;
+let limit = 10;
 let prevCount = 0;
 let nextCount = limit - prevCount - 1;
 let imagesData = [];
