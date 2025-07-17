@@ -38,11 +38,13 @@ function showImages(data) {
   slider.innerHTML = data
     .map(
       (e) =>
-        `<div class="slide">
+      {if (Number(e.id) === prevCount) {
+       return `<div class="slide">
             <img src=${e.download_url} alt="" width=500 height=300 class="${
           Number(e.id) === prevCount ? "active" : ""
         }" id=${e.id}>
         </div>`
+      }}
     )
     .join(" ");
 }
