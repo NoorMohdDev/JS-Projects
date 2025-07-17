@@ -27,6 +27,7 @@ async function sliderImages() {
       next.addEventListener("click", showNextImage);
       toggleImages();
       imagesData = fetchImagesList;
+      showImageOnDotClickListner()
     }
   } catch (error) {
     console.log(error);
@@ -75,7 +76,7 @@ function toggleImages() {
 }
 
 function showNextImage(e) {
-  if (e.target.classList.contains("prev")) {
+  if (e?.target.classList.contains("prev")) {
     if (prevCount <= limit - 1 && prevCount !== 0) {
       prevCount--;
       nextCount++;
@@ -89,4 +90,25 @@ function showNextImage(e) {
   toggleImages();
   showImages(imagesData);
   showDots(imagesData);
+}
+
+function showImageOnDotClickListner(e) {
+  const dotList = document.querySelectorAll(".dot");
+  dotList.forEach((item) => {
+    item.addEventListener("click", () => {
+      showImageOnDotClick(item)
+    });
+  });
+}
+
+function showImageOnDotClick(item) {
+  console.log(item.getAttribute("data-slide"));
+      prevCount = Number(item.getAttribute("data-slide"));
+      nextCount = limit - prevCount -1;
+
+      console.log([prevCount, nextCount]);
+      toggleImages();
+      showImages(imagesData);
+      showDots(imagesData);
+      showImageOnDotClickListner()
 }
