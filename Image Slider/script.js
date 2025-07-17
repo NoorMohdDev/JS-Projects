@@ -90,6 +90,7 @@ function showNextImage(e) {
   toggleImages();
   showImages(imagesData);
   showDots(imagesData);
+  showImageOnDotClickListner()
 }
 
 function showImageOnDotClickListner(e) {
