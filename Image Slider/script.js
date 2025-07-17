@@ -23,6 +23,8 @@ async function sliderImages() {
     if (fetchImagesList && fetchImagesList.length > 0) {
       showImages(fetchImagesList);
       showDots(fetchImagesList);
+      prev.addEventListener("click", showNextImage);
+      next.addEventListener("click", showNextImage);
       toggleImages();
       imagesData = fetchImagesList;
     }
@@ -59,14 +61,16 @@ function toggleImages() {
   if (prevCount === 0) {
     prev.setAttribute("disabled", null);
   } else {
-    prev.removeAttribute("disabled");
-    prev.addEventListener("click", showNextImage);
+    if (prev.hasAttribute("disabled")) {
+      prev.removeAttribute("disabled");
+    }
   }
   if (nextCount === 0) {
     next.setAttribute("disabled", null);
   } else {
-    next.removeAttribute("disabled");
-    next.addEventListener("click", showNextImage);
+    if (next.hasAttribute("disabled")) {
+      next.removeAttribute("disabled");
+    }
   }
 }
 
