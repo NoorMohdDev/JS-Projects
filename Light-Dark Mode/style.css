@@ -9,6 +9,7 @@
     --body-bg-dark:#393838;
     --body-font-dark:Arial, Helvetica, sans-serif;
     --toggle-theme-bg-dark:#848484;
+    --toggle-theme-borderRadius-dark:0;
     --toggle-theme-text-dark:#2b2a2a;
     --toggle-heading-text-dark:#adacac;
 }
@@ -44,6 +45,7 @@ font-family: var(--body-font-dark);
 .toggle-theme.dark {
     background: var(--toggle-theme-bg-dark);
     color: var(--toggle-theme-text-dark);
+    border-radius: var(--toggle-theme-borderRadius-dark);
 }
 .toggle-heading.dark{
     color: var(--toggle-heading-text-dark);
