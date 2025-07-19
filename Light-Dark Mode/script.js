@@ -4,19 +4,20 @@ const toggleHeading = document.querySelector(".toggle-heading");
 
 const elements = [body, toggleHeading, toggleTheme];
 
-document.onload = defaultTheme();
+document.onload = isDarkActive();
 
 toggleTheme.addEventListener("click", () => {
   changeTheme();
 });
 
-function defaultTheme() {
+
+function isDarkActive() {
   const isDarkActive = localStorage.getItem("dark");
-//   console.log(isDarkActive);
+  // console.log(localStorage);
   
-  if (isDarkActive) {
+  if (isDarkActive === "true") {
     changeTheme();
-  }
+  }else localStorage.removeItem("dark")
 }
 
 function changeTheme(){
@@ -31,4 +32,7 @@ function changeTheme(){
   if (elements.some((item) => item.classList.contains("dark"))) {
     localStorage.setItem("dark", true);
   } else localStorage.setItem("dark",false);
+
+  // console.log(localStorage);
+  
 };
