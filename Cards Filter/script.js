@@ -52,4 +52,17 @@ const categories = [
       .join(" ");
   }
   
+   function loadContent(){
+      content.innerHTML = items
+    .map(
+      ({ category, item }) => `
+      <div class="card">
+          <h3>${category}</h3>
+          <p>${item}</p>
+      </div>
+      `
+    )
+    .join(" ");
+  }
+  
  
