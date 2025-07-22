@@ -37,4 +37,19 @@ const categories = [
     { item: "Science Magazine", category: "Books" },
   ];
   
+  const filterButtons = document.querySelector(".filter-buttons");
+  const content = document.querySelector(".content");
   
+  function loadFilterButton(params) {
+    filterButtons.innerHTML =
+    `<button>All</button>` +
+    categories
+      .map(
+        (item) => `
+      <button>${item}</button>
+      `
+      )
+      .join(" ");
+  }
+  
+ 
