@@ -17,6 +17,7 @@ generateQR.addEventListener("click",()=>{
 		});
 
 		QRText.value=""
+		QRGenerateErrorMessage.innerHTML=""
 
 	}else {
 		QRGenerateErrorMessage.innerHTML="Please Type Something!"
