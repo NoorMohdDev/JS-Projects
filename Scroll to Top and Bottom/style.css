@@ -1,0 +1,29 @@
+* {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  text-align: center;
+}
+
+.loader {
+  display: none;
+}
+
+.loader.show {
+  display: block;
+}
+
+.users-list.hide {
+  display: none;
+}
+
+h2 {
+  text-align: left;
+}
+
+button {
+  background: yellow;
+  color: black;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 25px;
+}
