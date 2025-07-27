@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tip Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container-wrapper">
+      <h1>Tip Calculator</h1>
+      <div class="container">
+        <div class="input">
+          <label for="amount">Bill  <span>0</span></label>
+          <input type="text" id="amount" />
+        </div>
+        <div class="input">
+          <label>Disount %  <span>0</span></label>
+          <input type="range" class="range" id="discount" />
+        </div>
+        <div class="input">
+          <label>Tip %  <span>0</span></label>
+          <input type="range" class="range" id="tip" />
+        </div>
+        <div class="input">
+          <label>Customers <span>0</span></label>
+          <input type="range" class="range" id="customers" />
+        </div>
+        <button type="butoon">Generate Bill</button>
+        <p>Total Tip Paid : <span class="total-tip">0</span></p>
+        <p>Total Amount To Pay : <span class="total-amount">0</span></p>
+        <p>Each Customer To Pay : <span class="each-customer-pay">0</span></p>
+      </div>
+    </div>
+  </body>
+</html>
