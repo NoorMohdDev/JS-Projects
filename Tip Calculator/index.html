@@ -11,26 +11,27 @@
       <h1>Tip Calculator</h1>
       <div class="container">
         <div class="input">
-          <label for="amount">Bill  <span>0</span></label>
-          <input type="text" id="amount" />
+          <label for="amount">Bill Amount</label>
+          <input type="number" id="amount" />
         </div>
         <div class="input">
-          <label>Disount %  <span>0</span></label>
-          <input type="range" class="range" id="discount" />
+          <label>Disount %  <span class="discount-value">0</span></label>
+          <input type="range" class="range-input" id="discount" value="0" max="100" min="0">
         </div>
         <div class="input">
-          <label>Tip %  <span>0</span></label>
-          <input type="range" class="range" id="tip" />
+          <label>Tip %  <span class="tip-value">0</span></label>
+          <input type="range" class="range-input" id="tip" value="0" max="100" min="0">
         </div>
         <div class="input">
-          <label>Customers <span>0</span></label>
-          <input type="range" class="range" id="customers" />
+          <label>Customers <span class="customers-count">0</span></label>
+          <input type="range" class="range-input" id="customers" value="0" max="100" min="0">
         </div>
-        <button type="butoon">Generate Bill</button>
+        <button type="button" class="generate-bill">Generate Bill</button>
         <p>Total Tip Paid : <span class="total-tip">0</span></p>
         <p>Total Amount To Pay : <span class="total-amount">0</span></p>
         <p>Each Customer To Pay : <span class="each-customer-pay">0</span></p>
       </div>
     </div>
+    <script src="script.js"></script>
   </body>
 </html>
