@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  text-align: center;
+}
+img{
+  padding: 10px;
+}
+button{
+  padding: 10px;
+  color: white;
+  background: #000;
+  border-radius: 7px;
+}
