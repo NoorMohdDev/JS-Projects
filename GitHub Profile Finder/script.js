@@ -13,21 +13,19 @@ search.addEventListener("input", (e) => {
   search.value = e.target.value;
 });
 
-findProfile.addEventListener("click", () => {
-  if (search.value==="") {
-    loader.style.display="block"
-    profileContainer.style.display="none"
-      loader.innerText = "Please! Provide Valid Input";
-    } else {
-      loadProfile();
-  }
-});
+findProfile.addEventListener("click",loadProfile);
 console.log(search.value);
 
 function loadProfile() {
-  loader.innerText = "Loading Please Wait...";
-  loader.style.display = "block";
-  fetchProfile()
+    if (search.value==="") {
+        loader.style.display="block"
+        profileContainer.style.display="none"
+          loader.innerText = "Please! Provide Valid Input";
+        } else {
+            loader.innerText = "Loading Please Wait...";
+            loader.style.display = "block";
+            fetchProfile()
+      }
 }
 
 async function fetchProfile() {
