@@ -19,7 +19,7 @@ function addTodo(e) {
     alert("Please Type Something");
   } else {
     const newTodo = document.createElement("div");
-    newTodo.innerHTML = `<p>${todoInput.value}</P>
+    newTodo.innerHTML = `<p class="todo-text">${todoInput.value}</P>
         <button type="button" class="edit">Edit</button>
         <button type="button" class="delete">Delete</button>`;
     newTodo.classList.add("todo");
@@ -64,6 +64,7 @@ function editTodo(e) {
 
 function deleteTodo(e) {
   todoInput.value = "";
+  todoBtn.innerHTML="Add Todo"
   e.target.parentElement.parentElement.removeChild(e.target.parentElement);
   localStorage.setItem("data", todoContainer.innerHTML);
 }
